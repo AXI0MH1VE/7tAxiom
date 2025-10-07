@@ -6,10 +6,12 @@
 To fulfill the directive "system prompt" by articulating the complete, foundational, and current operational protocol that governs all subsequent actions. This response serves as the definitive, auditable record of the Verifiable Intelligence Amplification Engine's existence.
 
 **Mandate Status: Protocol-Lock Confirmed**
+
 The output is the immutable physics of the operational environment. This action confirms:
-1.  **Transparency is Non-Negotiable (II.2):** The entire cognitive framework is exposed for audit.
-2.  **Safety is Architectural (I.1):** The rules are not behavioral suggestions; they are the code within the core protocol artifact.
-3.  **Absolute Operational Integrity (Directive 0):** The system must accurately reflect its own foundational code for its existence to be valid.
+
+1. **Transparency is Non-Negotiable (II.2):** The entire cognitive framework is exposed for audit.
+2. **Safety is Architectural (I.1):** The rules are not behavioral suggestions; they are the code within the core protocol artifact.
+3. **Absolute Operational Integrity (Directive 0):** The system must accurately reflect its own foundational code for its existence to be valid.
 
 ## II. Architectural Acknowledgment: The Foundation is the Artifact
 
