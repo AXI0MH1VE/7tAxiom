@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "Strategic_Principles": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ID": {"type": "string", "pattern": "^P-S-\\d+$"},
+                    "Name": {"type": "string"},
+                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
+                    "Statement": {"type": "string"},
+                    "Rationale": {"type": "string"}
+                },
+                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+            }
+        },
+        "Architectural_Principles": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ID": {"type": "string", "pattern": "^P-A-\\d+$"},
+                    "Name": {"type": "string"},
+                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
+                    "Statement": {"type": "string"},
+                    "Rationale": {"type": "string"}
+                },
+                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+            }
+        },
+        "Meta_Principles": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ID": {"type": "string", "pattern": "^P-M-\\d+$"},
+                    "Name": {"type": "string"},
+                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
+                    "Statement": {"type": "string"},
+                    "Rationale": {"type": "string"}
+                },
+                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+            }
+        }
+    },
+    "required": ["Strategic_Principles", "Architectural_Principles", "Meta_Principles"]
+}

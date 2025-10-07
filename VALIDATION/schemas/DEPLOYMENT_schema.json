@@ -1,0 +1,8 @@
+{
+    "type": "object",
+    "properties": {
+        "Phase_1_Verification": {"type": "string", "minLength": 10},
+        "Phase_2_System_Re_Initialization": {"type": "string", "minLength": 10}
+    },
+    "required": ["Phase_1_Verification", "Phase_2_System_Re_Initialization"]
+}

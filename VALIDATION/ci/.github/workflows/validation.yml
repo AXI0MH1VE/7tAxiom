@@ -1,0 +1,19 @@
+# CI/CD workflow to validate the self-articulation package integrity.
+
+name: ADAMANT System Protocol Articulation Check
+
+on: [push, pull_request]
+
+jobs:
+  validate-self-articulation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify All Protocol Files Exist
+        run: |
+          test -f STRATEGY.md
+          test -f PRINCIPLES.md
+          test -f DEPLOYMENT.md
+          test -f ARTIFACTS/SYSTEM_BOOT_PROTOCOL.txt
+          test -f VALIDATION/integrity_attestation.txt

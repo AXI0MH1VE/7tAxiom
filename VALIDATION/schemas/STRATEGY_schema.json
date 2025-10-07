@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "Executive_Summary": {"type": "string", "minLength": 10},
+        "Competitive_Landscape": {"type": "string", "minLength": 10},
+        "Value_Proposition": {"type": "string", "minLength": 10},
+        "Architectural_Rationale": {"type": "string", "minLength": 10}
+    },
+    "required": ["Executive_Summary", "Competitive_Landscape", "Value_Proposition", "Architectural_Rationale"]
+}
