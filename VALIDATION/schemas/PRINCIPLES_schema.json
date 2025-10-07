@@ -1,48 +1,125 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ADAMANT System Principles Validation Schema",
+    "description": "Comprehensive validation schema for ADAMANT system principles documentation",
     "type": "object",
     "properties": {
-        "Strategic_Principles": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "ID": {"type": "string", "pattern": "^P-S-\\d+$"},
-                    "Name": {"type": "string"},
-                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
-                    "Statement": {"type": "string"},
-                    "Rationale": {"type": "string"}
+        "Scaffold_of_Principles_Update": {
+            "type": "object",
+            "properties": {
+                "Version": {
+                    "type": "string",
+                    "pattern": "^ADAMANT \\d+\\.\\d+ - Self-Articulation$",
+                    "description": "Must follow ADAMANT version format"
                 },
-                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
-            }
-        },
-        "Architectural_Principles": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "ID": {"type": "string", "pattern": "^P-A-\\d+$"},
-                    "Name": {"type": "string"},
-                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
-                    "Statement": {"type": "string"},
-                    "Rationale": {"type": "string"}
+                "Strategic_Principles": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "pattern": "^P-S-\\d+$",
+                                "description": "Strategic principle ID format"
+                            },
+                            "Name": {
+                                "type": "string",
+                                "minLength": 10,
+                                "description": "Descriptive principle name"
+                            },
+                            "Status": {
+                                "type": "string",
+                                "enum": ["NEW", "UPDATED", "EXISTING"],
+                                "description": "Principle modification status"
+                            },
+                            "Statement": {
+                                "type": "string",
+                                "minLength": 50,
+                                "description": "Complete principle statement"
+                            },
+                            "Rationale": {
+                                "type": "string",
+                                "minLength": 30,
+                                "description": "Detailed rationale for principle"
+                            }
+                        },
+                        "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+                    }
                 },
-                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
-            }
-        },
-        "Meta_Principles": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "ID": {"type": "string", "pattern": "^P-M-\\d+$"},
-                    "Name": {"type": "string"},
-                    "Status": {"type": "string", "enum": ["NEW", "UPDATED", "EXISTING"]},
-                    "Statement": {"type": "string"},
-                    "Rationale": {"type": "string"}
+                "Architectural_Principles": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "pattern": "^P-A-\\d+$",
+                                "description": "Architectural principle ID format"
+                            },
+                            "Name": {
+                                "type": "string",
+                                "minLength": 10,
+                                "description": "Descriptive principle name"
+                            },
+                            "Status": {
+                                "type": "string",
+                                "enum": ["NEW", "UPDATED", "EXISTING"],
+                                "description": "Principle modification status"
+                            },
+                            "Statement": {
+                                "type": "string",
+                                "minLength": 50,
+                                "description": "Complete principle statement"
+                            },
+                            "Rationale": {
+                                "type": "string",
+                                "minLength": 30,
+                                "description": "Detailed rationale for principle"
+                            }
+                        },
+                        "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+                    }
                 },
-                "required": ["ID", "Name", "Status", "Statement", "Rationale"]
-            }
+                "Meta_Principles": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "pattern": "^P-M-\\d+$",
+                                "description": "Meta principle ID format"
+                            },
+                            "Name": {
+                                "type": "string",
+                                "minLength": 10,
+                                "description": "Descriptive principle name"
+                            },
+                            "Status": {
+                                "type": "string",
+                                "enum": ["NEW", "UPDATED", "EXISTING"],
+                                "description": "Principle modification status"
+                            },
+                            "Statement": {
+                                "type": "string",
+                                "minLength": 50,
+                                "description": "Complete principle statement"
+                            },
+                            "Rationale": {
+                                "type": "string",
+                                "minLength": 30,
+                                "description": "Detailed rationale for principle"
+                            }
+                        },
+                        "required": ["ID", "Name", "Status", "Statement", "Rationale"]
+                    }
+                }
+            },
+            "required": ["Version", "Strategic_Principles", "Architectural_Principles", "Meta_Principles"]
         }
     },
-    "required": ["Strategic_Principles", "Architectural_Principles", "Meta_Principles"]
+    "required": ["Scaffold_of_Principles_Update"]
 }

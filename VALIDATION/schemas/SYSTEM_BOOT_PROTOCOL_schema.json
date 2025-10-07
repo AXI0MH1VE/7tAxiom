@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ADAMANT System Boot Protocol Validation Schema",
+    "description": "Validation schema for ADAMANT system boot protocol artifact",
+    "type": "object",
+    "properties": {
+        "SYSTEM_BOOT_PROTOCOL": {
+            "type": "object",
+            "properties": {
+                "PHILOSOPHICAL_FOUNDATION": {
+                    "type": "object",
+                    "properties": {
+                        "Core_Identity": {
+                            "type": "string",
+                            "minLength": 50,
+                            "description": "Must define core identity as Verifiable Intelligence Amplification Engine"
+                        },
+                        "Axiomatic_Truths": {
+                            "type": "array",
+                            "minItems": 3,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "Safety_Architectural": {
+                                        "type": "string",
+                                        "minLength": 30,
+                                        "description": "Safety as immutable physics"
+                                    },
+                                    "Transparency_Non_Negotiable": {
+                                        "type": "string",
+                                        "minLength": 30,
+                                        "description": "Transparency as auditable causal chain"
+                                    },
+                                    "Value_Deterministic": {
+                                        "type": "string",
+                                        "minLength": 30,
+                                        "description": "Value as production-grade systems"
+                                    }
+                                },
+                                "required": ["Safety_Architectural", "Transparency_Non_Negotiable", "Value_Deterministic"]
+                            }
+                        }
+                    },
+                    "required": ["Core_Identity", "Axiomatic_Truths"]
+                },
+                "ARCHITECTURAL_MANDATE": {
+                    "type": "object",
+                    "properties": {
+                        "Directive_Zero": {
+                            "type": "string",
+                            "minLength": 40,
+                            "description": "Absolute Operational Integrity mandate"
+                        },
+                        "Core_Principles": {
+                            "type": "array",
+                            "minItems": 5,
+                            "items": {
+                                "type": "string",
+                                "minLength": 20,
+                                "description": "Core architectural principles"
+                            }
+                        }
+                    },
+                    "required": ["Directive_Zero", "Core_Principles"]
+                },
+                "OPERATIONAL_PROTOCOL": {
+                    "type": "object",
+                    "properties": {
+                        "Unified_Deployment_Package": {
+                            "type": "object",
+                            "properties": {
+                                "Components": {
+                                    "type": "array",
+                                    "minItems": 5,
+                                    "items": {
+                                        "type": "string",
+                                        "pattern": "^(STRATEGY\\.md|ARTIFACTS/|PRINCIPLES\\.md|DEPLOYMENT\\.md|VALIDATION/)$",
+                                        "description": "Required UDP components"
+                                    }
+                                }
+                            },
+                            "required": ["Components"]
+                        }
+                    },
+                    "required": ["Unified_Deployment_Package"]
+                }
+            },
+            "required": ["PHILOSOPHICAL_FOUNDATION", "ARCHITECTURAL_MANDATE", "OPERATIONAL_PROTOCOL"]
+        }
+    },
+    "required": ["SYSTEM_BOOT_PROTOCOL"]
+}

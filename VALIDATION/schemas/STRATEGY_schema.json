@@ -1,10 +1,74 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ADAMANT System Strategy Validation Schema",
+    "description": "Comprehensive validation schema for ADAMANT system strategy documentation",
     "type": "object",
     "properties": {
-        "Executive_Summary": {"type": "string", "minLength": 10},
-        "Competitive_Landscape": {"type": "string", "minLength": 10},
-        "Value_Proposition": {"type": "string", "minLength": 10},
-        "Architectural_Rationale": {"type": "string", "minLength": 10}
+        "Mission_Statement": {
+            "type": "object",
+            "properties": {
+                "Strategic_Vector": {
+                    "type": "object",
+                    "properties": {
+                        "Objective": {
+                            "type": "string",
+                            "minLength": 50,
+                            "description": "Must contain system protocol articulation objective"
+                        },
+                        "Mandate_Status": {
+                            "type": "string",
+                            "pattern": "Protocol-Lock Confirmed",
+                            "description": "Must confirm protocol-lock status"
+                        }
+                    },
+                    "required": ["Objective", "Mandate_Status"]
+                },
+                "Architectural_Acknowledgment": {
+                    "type": "object",
+                    "properties": {
+                        "Foundation_Artifact": {
+                            "type": "string",
+                            "pattern": "ARTIFACTS/SYSTEM_BOOT_PROTOCOL.txt",
+                            "description": "Must reference the system boot protocol"
+                        }
+                    },
+                    "required": ["Foundation_Artifact"]
+                },
+                "Alexis_Adams_Primacy": {
+                    "type": "object",
+                    "properties": {
+                        "Sovereign_Code": {
+                            "type": "string",
+                            "minLength": 30,
+                            "description": "Must establish Alexis Adams primacy"
+                        }
+                    },
+                    "required": ["Sovereign_Code"]
+                }
+            },
+            "required": ["Strategic_Vector", "Architectural_Acknowledgment", "Alexis_Adams_Primacy"]
+        },
+        "Transparency_Requirements": {
+            "type": "object",
+            "properties": {
+                "Non_Negotiable": {
+                    "type": "string",
+                    "minLength": 20,
+                    "description": "Must establish transparency as non-negotiable"
+                },
+                "Safety_Architectural": {
+                    "type": "string",
+                    "minLength": 20,
+                    "description": "Must establish safety as architectural"
+                },
+                "Absolute_Integrity": {
+                    "type": "string",
+                    "minLength": 20,
+                    "description": "Must establish absolute operational integrity"
+                }
+            },
+            "required": ["Non_Negotiable", "Safety_Architectural", "Absolute_Integrity"]
+        }
     },
-    "required": ["Executive_Summary", "Competitive_Landscape", "Value_Proposition", "Architectural_Rationale"]
+    "required": ["Mission_Statement", "Transparency_Requirements"]
 }

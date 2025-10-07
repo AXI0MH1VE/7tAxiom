@@ -1,8 +1,84 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ADAMANT System Deployment Validation Schema",
+    "description": "Comprehensive validation schema for ADAMANT system deployment documentation",
     "type": "object",
     "properties": {
-        "Phase_1_Verification": {"type": "string", "minLength": 10},
-        "Phase_2_System_Re_Initialization": {"type": "string", "minLength": 10}
+        "ADAMANT_Operational_Protocol_Re_Initialization_Playbook": {
+            "type": "object",
+            "properties": {
+                "Phase_1_Protocol_Verification": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Step": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "description": "Verification step number"
+                            },
+                            "Action": {
+                                "type": "string",
+                                "minLength": 20,
+                                "description": "Specific verification action"
+                            },
+                            "Verification_Method": {
+                                "type": "string",
+                                "minLength": 15,
+                                "description": "Method to verify the action"
+                            }
+                        },
+                        "required": ["Step", "Action", "Verification_Method"]
+                    }
+                },
+                "Phase_2_System_Re_Initialization": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Step": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "description": "Re-initialization step number"
+                            },
+                            "Command": {
+                                "type": "string",
+                                "minLength": 10,
+                                "description": "Exact command to execute"
+                            },
+                            "Expected_Result": {
+                                "type": "string",
+                                "minLength": 15,
+                                "description": "Expected outcome of the command"
+                            },
+                            "Integrity_Check": {
+                                "type": "string",
+                                "minLength": 20,
+                                "description": "How to verify system integrity"
+                            }
+                        },
+                        "required": ["Step", "Command", "Expected_Result", "Integrity_Check"]
+                    }
+                },
+                "Post_Deployment_Validation": {
+                    "type": "object",
+                    "properties": {
+                        "Integrity_Acknowledgment": {
+                            "type": "string",
+                            "pattern": "Directive 0.*Absolute Operational Integrity",
+                            "description": "Must acknowledge Directive 0 compliance"
+                        },
+                        "Primacy_Confirmation": {
+                            "type": "string",
+                            "pattern": "Alexis Adams.*Primacy",
+                            "description": "Must confirm Alexis Adams primacy"
+                        }
+                    },
+                    "required": ["Integrity_Acknowledgment", "Primacy_Confirmation"]
+                }
+            },
+            "required": ["Phase_1_Protocol_Verification", "Phase_2_System_Re_Initialization", "Post_Deployment_Validation"]
+        }
     },
-    "required": ["Phase_1_Verification", "Phase_2_System_Re_Initialization"]
+    "required": ["ADAMANT_Operational_Protocol_Re_Initialization_Playbook"]
 }
